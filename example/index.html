@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/splitAndReorder.js"></script>
+    <script type="text/javascript" src="../js/bootstrapConfirm.js"></script>
+    <link href="../js/jquery-ui/jquery-ui.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	
+</head>
+<body>
+
+<div class="panel-body container">
+	<div class="col-lg-12">
+		<div class="col-lg-12">
+			<div class="col-lg-10 col-offset-1">
+				<div class="alert alert-danger hidden errorMessages"></div>
+				<table class="table table-bordered lister" id="seasonsTable">
+					<thead>
+						<tr>
+							<th>Action</th>
+							<th>From</th>
+							<th>To</th>
+							<th class="col-lg-3">Season</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-rownr="1">
+							<td class="col-lg-1">
+								<span onclick="addSeasonEntry(false, false)" data-container="1" data-toggle="tooltip" data-original-title="Add season" class="addSeason glyphicon glyphicon-plus-sign stanga " style="font-size: 20px; color:green;"></span>
+								<span onclick="removeSeasonEntry()" data-toggle="tooltip" data-original-title="Remove season" data-placement="top" class="removeSeason glyphicon glyphicon-minus-sign stanga  hidden " style="font-size: 20px; color: rgb(255, 0, 0);"></span>
+							</td>
+							<td class="col-lg-3">
+								 <div class="input-group">
+									 <input class="datepickerFrom form-control input-small" placeholder="From" autocomplete="off" value="March 11, 2016" name="" type="text" style="cursor: pointer;">  
+									 <span class="input-group-addon input-small glyphicon glyphicon-calendar"></span>
+								 </div>
+							</td>
+							<td class="col-lg-3">
+								 <div class="input-group">
+								<input class="datepickerTo form-control input-small" placeholder="to" autocomplete="off" value="December 30, 2016" name="" type="text" style="cursor: pointer;">                                    
+								<span class="input-group-addon input-small glyphicon glyphicon-calendar"></span>
+								 </div>
+							</td>
+							<td class="col-lg-3">
+								<select class="form-control input-small seasonSelect" name="">
+								<option value="52939" selected="selected">First</option>
+								<option value="52949">Second</option>
+								<option value="52959">Third</option></select>                                
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-default pull-right " id="orderSeasons" onclick="splitAndOrderSeasons()"><span class="glyphicon glyphicon glyphicon-sort-by-attributes"></span> Split &amp; Reorder</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+initDatePickers('.datepickerFrom','.datepickerTo');
+});
+
+</script>
+
+</body>
+</html>

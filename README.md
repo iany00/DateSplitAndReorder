@@ -1,0 +1,1 @@
+Multiple date ranges split in case they overlap.
